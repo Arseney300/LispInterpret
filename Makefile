@@ -3,13 +3,14 @@ OUT = lisp
 
 CC = gcc
 CFLAGS = -O3 -Wall -Werror
+LIBS = -lreadline
 
 SRC = lisp.c
 OBJ = $(SRC:.c=.o)
 
 
 all: OBJ
-	$(CC) $(CFLAGS) $(OBJ) -o $(OUT)
+	$(CC) $(CFLAGS) $(OBJ) $(LIBS) -o $(OUT)
 	rm *.o
 
 OBJ:
